@@ -1,6 +1,4 @@
 const { prisma } = require('../prisma/prisma-client');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 
 /**
  * @route GET /api/employees
