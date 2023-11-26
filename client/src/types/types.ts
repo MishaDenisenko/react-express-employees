@@ -4,3 +4,10 @@ export type ErrorWithMessage = {
         message: string
     }
 }
+
+export type User = {
+    'id': string,
+    'email': string,
+    'password': string,
+    'name': string
+}

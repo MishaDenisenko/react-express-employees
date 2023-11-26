@@ -1,8 +1,8 @@
-import PrismaClient from '../../../server/prisma/prisma-client';
+import { User } from '../types/types';
 import { api } from './api';
 
 
-export type UserData = Omit<PrismaClient.User, 'id'>;
+export type UserData = Omit<User, 'id'>;
 export type ResponseUserData = UserData & { token: string };
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ( {
