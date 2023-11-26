@@ -6,12 +6,12 @@ import { NamePath } from 'antd/es/form/interface';
 interface IInput extends InputProps {
     name: string,
     placeholder: string,
-    isPassword: boolean,
+    isPassword?: boolean,
     dependencies?: NamePath[] | undefined
 }
 
 const Input = (props: IInput) => {
-    const { isPassword, name, placeholder, type = 'text', size = 'large', dependencies } = props;
+    const { isPassword = false, name, placeholder, type = 'text', size = 'large', dependencies } = props;
 
     const requiredRule = { required: true, message: 'Required field' };
 
