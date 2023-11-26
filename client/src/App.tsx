@@ -6,6 +6,7 @@ import { PATHS } from './constants/paths';
 
 import Login from './containers/Login';
 import Register from './containers/Register';
+import Auth from './features/components';
 
 
 const router = createBrowserRouter([
@@ -26,7 +27,9 @@ const router = createBrowserRouter([
 const App = () => {
     return (
         <ConfigProvider theme={ { algorithm: theme.darkAlgorithm } }>
-            <RouterProvider router={ router }/>
+            <Auth>
+                <RouterProvider router={ router }/>
+            </Auth>
         </ConfigProvider>
     );
 };
