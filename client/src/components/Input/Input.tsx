@@ -4,6 +4,8 @@ import { NamePath } from 'antd/es/form/interface';
 
 
 interface IInput extends InputProps {
+    name: string,
+    placeholder: string,
     isPassword: boolean,
     dependencies?: NamePath[] | undefined
 }
@@ -11,14 +13,10 @@ interface IInput extends InputProps {
 const Input = (props: IInput) => {
     const { isPassword, name, placeholder, type = 'text', size = 'large', dependencies } = props;
 
-    const requiredRule = { required: true, message: 'Обязательное поле' };
+    const requiredRule = { required: true, message: 'Required field' };
 
     return (
         isPassword ?
-            <Form.Item name={ name } shouldUpdate={ true } rules={ [requiredRule] }>
-                <AntInput placeholder={ placeholder } type={ type } size={ size }/>
-            </Form.Item>
-            :
             <Form.Item name={ name } dependencies={ dependencies }
                        rules={ [requiredRule, ({ getFieldValue }) => ( {
                            validator(_, value) {
@@ -27,17 +25,22 @@ const Input = (props: IInput) => {
                                if (name === 'confirmPassword') {
                                    return getFieldValue('password') === value
                                        ? Promise.resolve()
-                                       : Promise.reject(new Error('Пароли должны совпадать'));
+                                       : Promise.reject(new Error('Passwords don`t match'));
                                } else {
                                    return value.length < 6
-                                       ? Promise.reject(new Error('Пароль должен быть длиньше 6-ти символов'))
+                                       ? Promise.reject(new Error('At least 6 symbols'))
                                        : Promise.resolve();
                                }
                            },
                        } )] }
             >
-                <AntInput.Password placeholder={ placeholder } type={ type } size={ size }/>
+                <AntInput.Password placeholder={ placeholder } size={ size }/>
             </Form.Item>
+            :
+            <Form.Item name={ name } shouldUpdate={ true } rules={ [requiredRule] }>
+                <AntInput placeholder={ placeholder } type={ type } size={ size }/>
+            </Form.Item>
+
     );
 };
 
