@@ -5,7 +5,7 @@ export const listenerMiddleware = createListenerMiddleware();
 
 listenerMiddleware.startListening({
     matcher: login.matchFulfilled,
-    effect: (action, listenerApi) => {
+    effect: async (action, listenerApi) => {
         listenerApi.cancelActiveListeners();
 
         action.payload.token && localStorage.setItem('token', action.payload.token);
