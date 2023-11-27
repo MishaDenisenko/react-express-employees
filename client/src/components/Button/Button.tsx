@@ -2,28 +2,36 @@ import React from 'react';
 import { Form, Button as AntButton, ButtonProps } from 'antd';
 
 
-interface IButton extends ButtonProps {}
+interface IButton extends ButtonProps {
+    isInForm?: boolean;
+}
 
-const Button = (props: IButton) => {
+const CustomButton = (props: IButton) => {
     const {
         htmlType, type, onClick, danger, loading, shape, icon, children,
     } = props;
 
     return (
-        <Form.Item>
-            <AntButton
-                htmlType={ htmlType || 'button' }
-                type={ type }
-                onClick={ onClick }
-                danger={ danger }
-                loading={ loading }
-                shape={ shape }
-                icon={ icon }
-            >
-                { children }
-            </AntButton>
-        </Form.Item>
-    );
+        <AntButton
+            type={type}
+            htmlType={htmlType}
+            danger={danger}
+            loading={loading}
+            size="large"
+            shape={ shape }
+            onClick={ onClick }
+            icon={ icon }
+        >
+            {children}
+        </AntButton>
+    )
+}
+
+const Button = (props: IButton) => {
+    const { isInForm } = props;
+
+
+    return !isInForm ? <CustomButton {...props}></CustomButton> : <Form.Item><CustomButton {...props}></CustomButton></Form.Item>;
 };
 
 export default Button;
