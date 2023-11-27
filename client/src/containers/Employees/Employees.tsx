@@ -42,7 +42,7 @@ const Employees: React.FC = () => {
 
     return (
         <Layout>
-            <Button type={ 'primary' } onClick={ () => {} } icon={ <PlusCircleOutlined/> } isInForm={true}>
+            <Button type={ 'primary' } onClick={ () => navigate(PATHS.employeeAdd) } icon={ <PlusCircleOutlined/> } isInForm={true}>
                 Add Employee
             </Button>
             <Table

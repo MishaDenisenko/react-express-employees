@@ -17,7 +17,7 @@ export const employees = api.injectEndpoints({
         }),
         addEmployees: builder.mutation<Employee, Employee>({
             query: (employee) => ( {
-                url: `/employee/add/${ employee.id }`,
+                url: `/employee/add/`,
                 method: 'POST',
                 body: employee,
             } ),
