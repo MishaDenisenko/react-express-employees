@@ -13,11 +13,7 @@ import Button from '../Button';
 import styles from './Header.module.css';
 
 
-interface IHeader {
-
-}
-
-const Header = (props: IHeader) => {
+const Header: React.FC = () => {
     const user = useAppSelector(selectUser);
     const navigate = useNavigate();
     const dispatch = useAppDispatch();

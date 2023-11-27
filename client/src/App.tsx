@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     },
 ]);
 
-const App = () => {
+const App: React.FC = () => {
     return (
         <ConfigProvider theme={ { algorithm: theme.darkAlgorithm } }>
             <Auth>

@@ -11,11 +11,8 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
-interface ILogin {
 
-}
-
-const Login = (props: ILogin) => {
+const Login: React.FC = () => {
     const navigate = useNavigate();
     const [loginUser, loginUserResult] = useLoginMutation();
     const [error, setError] = useState<string>('');

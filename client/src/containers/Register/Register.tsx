@@ -8,11 +8,8 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Layout from '../../components/Layout';
 
-interface IRegister {
 
-}
-
-const Register = (props: IRegister) => {
+const Register: React.FC = () => {
     return (
         <Layout>
             <Row align={ 'middle' } justify={ 'center' } style={ { marginTop: 100 } }>

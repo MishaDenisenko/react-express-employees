@@ -31,7 +31,7 @@ const tableColumns: ColumnsType<Employee> = [
         key: 'address',
     },
 ];
-const Employees = () => {
+const Employees: React.FC = () => {
     const { data, isLoading } = useGetAllEmployeesQuery();
     const user = useAppSelector(selectUser);
     const navigate = useNavigate();
