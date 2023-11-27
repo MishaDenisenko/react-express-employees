@@ -4,11 +4,11 @@ import { Row, Card, Form, Space, Typography } from 'antd';
 
 import { PATHS } from '../../constants/paths';
 
+import { useLoginMutation, UserData } from '../../services/auth';
+import { isErrorWithMessage } from '../../utils/isErrorWithMessage';
 import Layout from '../../components/Layout';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import { useLoginMutation, UserData } from '../../services/auth';
-import { isErrorWithMessage } from '../../utils/isErrorWithMessage';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 interface ILogin {
@@ -38,7 +38,7 @@ const Login = (props: ILogin) => {
                     <Form onFinish={ handleOnFinish }>
                         <Input isPassword={ false } name={ 'email' } placeholder={ 'Email' } type={ 'email' }/>
                         <Input isPassword={ true } name={ 'password' } placeholder={ 'Password' }/>
-                        <Button type={ 'primary' } htmlType={ 'submit' }>Sing In</Button>
+                        <Button type={ 'primary' } htmlType={ 'submit' } isInForm={true}>Sing In</Button>
                     </Form>
                     <Space direction={ 'vertical' } size={ 'large' }>
                         <Typography.Text>

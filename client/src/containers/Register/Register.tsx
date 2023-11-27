@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Form, Row, Space, Typography } from 'antd';
+
+import { PATHS } from '../../constants/paths';
+
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import { Link } from 'react-router-dom';
-import { PATHS } from '../../constants/paths';
 import Layout from '../../components/Layout';
 
 interface IRegister {
@@ -20,7 +22,7 @@ const Register = (props: IRegister) => {
                         <Input name={ 'email' } placeholder={ 'Email' } type={ 'email' }/>
                         <Input isPassword={ true } name={ 'password' } placeholder={ 'Password' }/>
                         <Input isPassword={ true } name={ 'confirmPassword' } placeholder={ 'Confirm Password' }/>
-                        <Button type={ 'primary' } htmlType={ 'submit' }>Sing Up</Button>
+                        <Button type={ 'primary' } htmlType={ 'submit' } isInForm={true}>Sing Up</Button>
                     </Form>
                     <Space direction={ 'vertical' } size={ 'large' }>
                         <Typography.Text>

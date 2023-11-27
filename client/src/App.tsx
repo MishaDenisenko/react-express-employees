@@ -7,16 +7,17 @@ import { PATHS } from './constants/paths';
 import Login from './containers/Login';
 import Register from './containers/Register';
 import Auth from './features/components';
+import Employees from './containers/Employees';
 
 
 const router = createBrowserRouter([
     {
-        path: PATHS.home,
-        element: <h1>Home</h1>,
-    },
-    {
         path: PATHS.login,
         element: <Login/>,
+    },
+    {
+        path: PATHS.home,
+        element: <Employees/>,
     },
     {
         path: PATHS.register,
