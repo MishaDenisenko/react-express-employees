@@ -9,7 +9,8 @@ const Button = (props: IButton) => {
         htmlType, type, onClick, danger, loading, shape, icon, children,
     } = props;
 
-    return (<Form.Item>
+    return (
+        <Form.Item>
             <AntButton
                 htmlType={ htmlType || 'button' }
                 type={ type }
@@ -21,7 +22,8 @@ const Button = (props: IButton) => {
             >
                 { children }
             </AntButton>
-        </Form.Item>);
+        </Form.Item>
+    );
 };
 
 export default Button;
