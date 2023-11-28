@@ -12,6 +12,7 @@ import { isErrorWithMessage } from '../../utils/isErrorWithMessage';
 
 import Layout from '../../components/Layout';
 import EmployeeForm from '../../components/EmployeeForm';
+import BackLink from '../../components/BackLink';
 
 const AddEmployee: React.FC = () => {
     const user = useAppSelector(selectUser);
@@ -36,6 +37,7 @@ const AddEmployee: React.FC = () => {
 
     return (
         <Layout>
+            <BackLink path={PATHS.home} title={'Back'}/>
             <Row align={ 'middle' } justify={ 'center' }>
                 <EmployeeForm onFinish={ handleAddEmployee } btnText={ 'Add' } title={ 'Add employee' } error={error}/>
             </Row>
