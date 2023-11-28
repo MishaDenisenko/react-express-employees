@@ -3,7 +3,7 @@ import { api } from './api';
 
 
 export type UserData = Omit<User, 'id'>;
-export type ResponseUserData = UserData & { token: string };
+export type ResponseUserData = User & { token: string };
 export const authApi = api.injectEndpoints({
     endpoints: (builder) => ( {
         login: builder.mutation<ResponseUserData, UserData>({
