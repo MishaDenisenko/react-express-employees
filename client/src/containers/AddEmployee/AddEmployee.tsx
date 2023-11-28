@@ -24,7 +24,6 @@ const AddEmployee: React.FC = () => {
     }, [user, navigate]);
 
     const handleAddEmployee = async (data: Employee) => {
-        console.log(data);
         try {
             await addEmployee(data).unwrap();
 
