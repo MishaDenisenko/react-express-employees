@@ -59,10 +59,10 @@ const EmployeesInfo: React.FC = () => {
                         { `${ data?.firstName } ${ data?.lastName }` }
                     </Descriptions.Item>
                     <Descriptions.Item span={ 3 } label={ 'Age' }>
-                        { `${ data?.age } ${ data?.age }` }
+                        { data?.age }
                     </Descriptions.Item>
                     <Descriptions.Item span={ 3 } label={ 'Address' }>
-                        { `${ data?.address } ${ data?.address }` }
+                        { data?.address }
                     </Descriptions.Item>
                 </Descriptions>
             }
