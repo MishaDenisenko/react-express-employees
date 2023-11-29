@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { Descriptions, Divider, Modal, Space } from 'antd';
-import { ArrowLeftOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 
 import { PATHS } from '../../constants/paths';
 import { useGetEmployeeByIdQuery, useRemoveEmployeeMutation } from '../../services/employees';

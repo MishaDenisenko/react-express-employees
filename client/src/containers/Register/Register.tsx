@@ -13,7 +13,7 @@ import ErrorMessage from '../../components/ErrorMessage';
 
 
 const Register: React.FC = () => {
-    const [registerUser, registerUserResult] = useRegisterMutation();
+    const [registerUser] = useRegisterMutation();
     const [error, setError] = useState<string>('');
     const navigate = useNavigate();
 
