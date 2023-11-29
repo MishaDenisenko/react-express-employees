@@ -11,6 +11,7 @@ import Employees from './containers/Employees';
 import AddEmployee from './containers/AddEmployee';
 import Status from './containers/Status';
 import EmployeesInfo from './containers/EmployeesInfo';
+import EditEmployee from './containers/EditEmployee';
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
     {
         path: `${PATHS.employee}/:id`,
         element: <EmployeesInfo/>,
+    },
+    {
+        path: `${PATHS.employeeEdit}/:id`,
+        element: <EditEmployee/>,
     },
     {
         path: `${PATHS.status}/:status`,
